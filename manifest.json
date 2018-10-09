@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["quickfocus.css"],
+      // "js": ["jquery-3.1.1.min.js", "quickfocus.js"]
+      "js": ["quickfocus.js"]
+    }
+  ],
+
+   "web_accessible_resources": [
+      "jqueryviewport.js", "withinviewport.js", "jquery.withinviewport.js", "embedded.js"
+  ],
+
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+
+  "name": "QuickFocus",
+  "description": "Get an enumeration for all visible elements and set focus quickly by typing the corresponding id",
+  "version": "1.1"
+
+}

@@ -1,0 +1,53 @@
+.quickFocusLabel{
+	position: absolute;
+	background: rgba(255,255,255,0.5);
+	z-index: 999999;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	padding-left: 2px;
+    padding-right: 2px;
+    margin-top: 2px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font: 15px/26px "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 15px;
+    font-family: "Helvetica Neue", HelveticaNeue,
+
+}
+
+#quickFocusOverlay{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #ffffff;
+	opacity: 0.2;
+	z-index: 999998;
+}
+
+input#quickFocusInput{
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	transform: translateX(-50%);
+	padding-left: 1px;
+	position: fixed;
+	z-index: 999999;
+	margin: 0 auto;
+	padding: 0px;
+	top: 10%;
+	left: 50%;
+	width: 400px;
+	height: 34px;
+
+	border: none;
+	outline: none;
+}
