@@ -14,13 +14,15 @@ qfdefer(function () {
         if(quickFocusListening){
             if(event.which == 13){
                 var selected = Number(qfjq('#quickFocusInput').val());
-                quickFocusDictionary[selected].focus();
+                var selected_element = quickFocusDictionary[selected]; 
+                selected_element.focus();
                 qfjq('.quickFocusLabel').remove();
                 qfjq('#quickFocusOverlay').remove();
                 qfjq('#quickFocusInput').remove();
                 quickFocusListening = false;
+                event.preventDefault();       
             }
-            else if (event.which == 27 || (event.which == 73 && event.ctrlKey== true)) {
+            else if (event.which == 27 || (event.which == 219 && event.ctrlKey== true)) {
                 qfjq('.quickFocusLabel').remove();
                 qfjq('#quickFocusOverlay').remove();
                 qfjq('#quickFocusInput').remove();
@@ -28,7 +30,7 @@ qfdefer(function () {
             }
             
         }
-        else if (event.which == 73 && event.ctrlKey== true){
+        else if (event.which == 219 && event.ctrlKey== true){
             showOverlay();
             quickFocusListening = true;
             event.preventDefault();       
@@ -44,14 +46,14 @@ function showOverlay(){
     quickFocusDictionary = {};
     all_elements = buttons.add(links).add(inputs);
 
-    sorted_elements = all_elements.sort(function(a,b) {
-        return qfjq(a).offset().top > qfjq(b).offset().top;
-    });
+    // sorted_elements = all_elements.sort(function(a,b) {
+    //     return qfjq(a).offset().top > qfjq(b).offset().top;
+    // });
 
     qfjq('body').append('<div id="quickFocusOverlay"/>');
     qfjq('body').append('<input id="quickFocusInput"/>');
 
-    sorted_elements.each(function(index){
+    all_elements.each(function(index){
         var offset = qfjq(this).offset();
         quickFocusDictionary[index] = qfjq(this);
         qfjq('body').append('<div class="quickFocusLabel" style="top:'+offset.top+'px; left:'+offset.left+'px">'+index+'</div>');

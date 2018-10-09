@@ -36,6 +36,8 @@
 }
 
 input#quickFocusInput{
+	font: 15px/26px "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+	text-align: center;
 	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 	transform: translateX(-50%);
 	padding-left: 1px;
