@@ -20,7 +20,14 @@ qfdefer(function () {
                 qfjq('#quickFocusOverlay').remove();
                 qfjq('#quickFocusInput').remove();
                 quickFocusListening = false;
-                event.preventDefault();       
+                console.log(event.ctrlKey);
+                if(!event.ctrlKey){
+                    event.preventDefault();       
+                }
+                else{
+                    console.log('not entering');
+
+                }
             }
             else if (event.which == 27 || (event.which == 219 && event.ctrlKey== true)) {
                 qfjq('.quickFocusLabel').remove();
