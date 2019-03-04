@@ -73,9 +73,6 @@ function showOverlay(){
     quickFocusDictionary = {};
     all_elements = buttons.add(links).add(inputs);
 
-    // sorted_elements = all_elements.sort(function(a,b) {
-    //     return qfjq(a).offset().top > qfjq(b).offset().top;
-    // });
     var body = qfjq('body');
     body.append('<div id="quickFocusOverlay"/>');
     body.append('<div id="quickFocusOverlayHorizontal"/>');
@@ -142,10 +139,6 @@ function subselect_overlay(arrow){
         }
     });
     qfjq(qfjq('.quickFocusLabel')[0]).addClass('firstLabel');
-    // console.log(qfjq('#quickFocusOverlay').css('width'));
-    // console.log(qfjq('#quickFocusOverlay').css('height'));
-    // console.log(qfjq('#quickFocusOverlay').css('left'));
-    // console.log(qfjq('#quickFocusOverlay').css('top'));
     
     var qfolh = qfjq('#quickFocusOverlayHorizontal');
     var qfolv = qfjq('#quickFocusOverlayVertical');
@@ -171,11 +164,6 @@ function subselect_overlay(arrow){
     qfolv.css('height', nhh + "px");
     qfolv.css('left', lm + "px");
     qfolv.css('top', (tm + nhh) + "px");
-
-    // console.log(qfjq('#quickFocusOverlay').css('width'));
-    // console.log(qfjq('#quickFocusOverlay').css('height'));
-    // console.log(qfjq('#quickFocusOverlay').css('left'));
-    // console.log(qfjq('#quickFocusOverlay').css('top'));
 
     qfjq('#quickFocusInput').focus();
 }
