@@ -1,6 +1,6 @@
 .quickFocusLabel{
 	position: absolute;
-	background: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.2);
 	z-index: 999999;
 	border: 1px solid #ccc;
 	border-radius: 15px;
@@ -24,7 +24,12 @@
 
 }
 
-#quickFocusOverlay{
+.quickFocusLabel.firstLabel{
+	background: rgba(0,200,40,0.5);
+}
+
+
+#quickFocusOverlay, #quickFocusOverlayHorizontal, #quickFocusOverlayVertical{
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -33,6 +38,22 @@
 	background: #ffffff;
 	opacity: 0.2;
 	z-index: 999998;
+}
+
+#quickFocusOverlayHorizontal, #quickFocusOverlayVertical{
+	/*visibility: hidden;*/
+}
+
+#quickFocusOverlayHorizontal{
+	background: rgba(0,0,255,0.4);
+	width: 50%;
+	left:50%;
+}
+
+#quickFocusOverlayVertical{
+	background: rgba(0,255,0,0.4);
+	height: 50%;
+	top:50%;
 }
 
 input#quickFocusInput{
