@@ -122,20 +122,14 @@ function subselect_overlay(arrow){
     }
 
     qfjq('.quickFocusLabel').remove();
-    tm = 20000;
-    bm = 0;
-    lm = 20000;
-    rm = 0;
     all_elements.each(function(index){
         var curel = qfjq(this);
         var offset = curel.offset();
         quickFocusDictionary[index] = qfjq(this);
-        if(offset.top >= ot && offset.top <= (ot + oh) && offset.left >= ol && offset.left <= (ol + ow)){
+        var offsetTop = qfjq(window).scrollTop()
+        var offsetLeft = qfjq(window).scrollLeft()
+        if(offset.top >= ot + offsetTop && offset.top <= (ot + offsetTop + oh) && offset.left >= ol + offsetLeft && offset.left <= (ol + offsetLeft+ ow)){
             qfjq('body').append('<div class="quickFocusLabel" style="top:'+offset.top+'px; left:'+offset.left+'px">'+index+'</div>');
-            if (offset.left < lm) lm = offset.left;
-            if (offset.left > rm) rm = offset.left + 30;
-            if (offset.top < tm) tm = offset.top;
-            if (offset.top > bm) bm = offset.top + 30;
         }
     });
     qfjq(qfjq('.quickFocusLabel')[0]).addClass('firstLabel');
@@ -143,10 +137,14 @@ function subselect_overlay(arrow){
     var qfolh = qfjq('#quickFocusOverlayHorizontal');
     var qfolv = qfjq('#quickFocusOverlayVertical');
 
-    var nw = rm - lm;
+    var nw = ow;
     var nwh = nw/2;
-    var nh = bm - tm;
+    var nh = oh;
     var nhh = nh/2;
+    var lm = ol;
+    var tm = ot;
+    var bm = oh;
+    var rm = ow;
 
     qfol.css('width', rm - lm + "px");
     
@@ -156,7 +154,7 @@ function subselect_overlay(arrow){
     qfol.css('top', tm + "px");
     
     qfolh.css('width', nwh + "px");
-    qfolh.css('height', bm - tm + "px");
+    qfolh.css('height', bm + "px");
     qfolh.css('left', (lm + nwh) + "px");
     qfolh.css('top', tm + "px");
 
